@@ -1,0 +1,65 @@
+*{
+    font-family: Roboto;
+}
+h1{
+    text-align: center;
+}
+.contenedor{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: gray;
+    border: 1px solid darkgray;
+    color: white;
+    align-items: center;
+}
+button:hover{
+    color: darkred;
+    background-color: darkgrey;
+}
+.variables{
+    width: 350px;
+    display: block;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.operaciones{
+    display: block;
+}
+.resultado, .iva, .subtotal{
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    color: gray;
+}
+.alarma{
+    width: 100%;
+    display: none;
+    text-align: left;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: red;
+    color: white;
+}
+#frmTriangulo{
+    display: none;
+}
+#frmCirculo{
+    display: none;
+}
+select{
+    display: block;
+    height: 40px;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+}

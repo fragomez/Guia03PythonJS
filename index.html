@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Ejercicios de Python en JavaScript - Guía 03</title>
+</head>
+
+<body>
+    <h1>1 .En una granja se requiere saber alguna información para determinar el precio de venta por cada kilo
+        de huevo. precio se determina a traves del promedio de calidad de las N gallinas que hay en la
+        granja. La calidad de cada gallina se obtiene según la formula:
+        calidad = (peso de la gallina * altura de la gallina)/Numero de huevos que pone;</h1>
+        <div class="contenedor">
+            <div class="variables">
+                <form id="guia3">
+                    <input id="cantidadGallinas" type="number" placeholder="Ingrese la cantidad de gallinas" required>
+                    <div class="operaciones">
+                        <button id="calcular" type="submit">Calcular</button>
+                        <button id="limpiar" type="reset">Limpiar</button>
+                    </div>
+                    <div class="resultado" id="resultado"></div>
+                </form>
+            </div>
+        </div>
+
+    <!-- Cargamos el archivo js dónde se realiza la lógica de negocio-->
+    <script src="main.js"></script>
+</body>
+
+</html>

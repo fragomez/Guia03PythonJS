@@ -2,26 +2,23 @@ addEventListener("DOMContentLoaded", (e) => {
     let calcular = document.querySelector("#guia3");
     calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        let cantVendedores = parseInt(prompt("Ingrese la cantidad de vendedores: "));
-        let sueldoBase = parseInt(prompt("Ingrese el sueldo base: "));
-        const comision = 0.10;
-        let contador = 1;
-        while(contador <= cantVendedores){
-            let nombre = prompt("Ingrese el nombre del vendedor");
-            let venta1 = parseInt(prompt("Ingrese el valor de la primera venta"));
-            let venta2 = parseInt(prompt("Ingrese el valor de la segunda venta"));
-            let venta3 = parseInt(prompt("Ingrese el valor de la tercera venta"));
-            let comVenta1 = venta1 * comision;
-            let comVenta2 = venta2 * comision;
-            let comVenta3 = venta3 * comision;
-            let sueldoTotal = sueldoBase + comVenta1 + comVenta2 + comVenta3;
-            let comTotal = comVenta1 + comVenta2 + comVenta3;
-            let ventasTotal = venta1 + venta2 + venta3 + comTotal;
-            alert(`El sueldo total de ${nombre} es: ${sueldoTotal}`);
-            alert(`El valor total de comisiones de ${nombre} es: ${comTotal}`);
-            alert(`El valor total de las ventas y las comisiones de ${nombre} es: ${ventasTotal}`);
+        let cantEstudiantes = parseInt(prompt("Ingrese la cantidad de estudiantes: "));
+        let credFundamentos = parseInt(prompt("Ingrese los créditos de Fundamentos: "));
+        let credBD = parseInt(prompt("Ingrese los créditos de Base de datos:"));
+        let credEtica = parseInt(prompt("Ingrese los créditos de Ética"))
+        let contador = 1, promedio = 0;
+        while(contador <= cantEstudiantes){
+            let nombre = prompt("Ingrese el nombre del estudiante");
+            let notaFundamentos = parseInt(prompt("Ingrese la nota de Fundamentos")) / credFundamentos;
+            let notaBD = parseInt(prompt("Ingrese la nota de Base de Datos")) / credBD;
+            let notaEtica = parseInt(prompt("Ingrese la nota de Ética")) / credEtica;
+            promedio = (notaFundamentos + notaBD + notaEtica);
+            alert(`El promedio ponderado de ${nombre} es: ${promedio.toFixed(2)}`);
             contador++;
+            promedio++;
         }
+        let promedioEstudiantes = promedio / cantEstudiantes;
+        document.querySelector("#resultado").innerHTML = `La nota promedio de los estudiantes es de: ${promedioEstudiantes.toFixed(2)}`;
     })
 })
 

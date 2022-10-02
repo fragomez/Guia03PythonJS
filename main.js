@@ -2,29 +2,25 @@ addEventListener("DOMContentLoaded", (e) => {
     let calcular = document.querySelector("#guia3");
     calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        let velAvion = 800 * (1/0.001) * (1/3600) //velocidad inicial del avión en m/s
-        let velProyectil = 0, acelAvion = 20, acelProyectil = 10, reccorridoAvion = 0, recorridoProyectil = 0, distancia = 0, tiempo = 0;
-        while(distancia <= 10000){
-            velAvion += 20;
-            velProyectil += 10;
-            reccorridoAvion = (velAvion * tiempo) + (acelAvion * (tiempo**2)) / 2;
-            recorridoProyectil = (velProyectil * tiempo) + (acelProyectil * (tiempo**2)) /2;
-            distancia = Math.sqrt(reccorridoAvion**2 + recorridoProyectil**2);
-            if(tiempo == 0){
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-            } else if (tiempo < 10 && 100 < distancia < 1000){
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-            } else if (tiempo < 10 && 1000 < distancia < 10000){
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-            } else if (tiempo == 10){
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-            } else if (tiempo > 10 && distancia < 10000){
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-            } else {
-                alert(`segundo ${tiempo}: Distancia entre el avión y el proyectil: ${distancia.toFixed(2)} m/s`);
-                document.querySelector("#resultado").innerHTML = `Distancia final: segundo ${tiempo} - ${distancia.toFixed(2)} m/s`
-            }
-            tiempo +=1;
+        let cantVendedores = parseInt(prompt("Ingrese la cantidad de vendedores: "));
+        let sueldoBase = parseInt(prompt("Ingrese el sueldo base: "));
+        const comision = 0.10;
+        let contador = 1;
+        while(contador <= cantVendedores){
+            let nombre = prompt("Ingrese el nombre del vendedor");
+            let venta1 = parseInt(prompt("Ingrese el valor de la primera venta"));
+            let venta2 = parseInt(prompt("Ingrese el valor de la segunda venta"));
+            let venta3 = parseInt(prompt("Ingrese el valor de la tercera venta"));
+            let comVenta1 = venta1 * comision;
+            let comVenta2 = venta2 * comision;
+            let comVenta3 = venta3 * comision;
+            let sueldoTotal = sueldoBase + comVenta1 + comVenta2 + comVenta3;
+            let comTotal = comVenta1 + comVenta2 + comVenta3;
+            let ventasTotal = venta1 + venta2 + venta3 + comTotal;
+            alert(`El sueldo total de ${nombre} es: ${sueldoTotal}`);
+            alert(`El valor total de comisiones de ${nombre} es: ${comTotal}`);
+            alert(`El valor total de las ventas y las comisiones de ${nombre} es: ${ventasTotal}`);
+            contador++;
         }
     })
 })
@@ -32,7 +28,6 @@ addEventListener("DOMContentLoaded", (e) => {
 function limpiar() {
     document.querySelector("#guia3").reset();
     document.querySelector("#resultado").innerHTML = "";
-    document.querySelector("#aprobados").innerHTML = "";
 }
 
 addEventListener('reset', limpiar);

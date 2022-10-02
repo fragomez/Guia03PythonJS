@@ -1,27 +1,19 @@
-let suma = (numero1, numero2) => numero1 + numero2;
-let resta = (numero1, numero2) => numero1 - numero2;
-let multiplicacion = (numero1, numero2) => numero1 * numero2;
-let division = (numero1, numero2) => numero1 / numero2;
-
-
 addEventListener("DOMContentLoaded", (e) => {
     let calcular = document.querySelector("#guia3");
     calcular.addEventListener("submit", (e) => {
         e.preventDefault();
-        let contador = 1;
-        while(contador <= 10){
-            numero1 = parseInt(prompt("Ingrese el primer número"));
-            numero2 = parseInt(prompt("Ingrese el segundo número"));
-            let sumar = suma(numero1, numero2);
-            let restar = resta(numero1, numero2);
-            let multiplicar = multiplicacion(numero1, numero2);
-            let dividir = division(numero1, numero2);
-            alert("La suma de ambos números es: " + sumar);
-            alert("La resta de ambos números es: " + restar);
-            alert("La multiplicación de ambos números es: " + multiplicar);
-            alert("La división de ambos números es: " + dividir);
+        let contador = 1, notaPromedio = 0;
+        while(contador <= 5){
+            let nombre = prompt(`Ingrese el nombre del estudiante ${contador}`);
+            let apellido = prompt(`Ingrese el apellido del estudiante ${contador}`);
+            let edad = parseInt(prompt(`Ingrese la edad del estudiante ${contador}`));
+            let nota = parseInt(prompt(`Ingrese la nota del estudiante ${contador}`));
+            notaPromedio += nota;
+            alert(`El estudiante ${nombre} ${apellido} de ${edad} años tiene una nota de ${nota}`);
             contador++; 
         }
+        let promedio = notaPromedio / 5;
+        document.querySelector("#resultado").innerHTML = `La nota promedio es de: ${promedio}`;
     })
 })
 
